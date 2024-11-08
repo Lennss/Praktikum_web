@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: url('../img/header-bg.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    color: #a57c2e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 400px;
+    background-color: rgba(10, 7, 7, 0.9);
+    padding: 2em;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h2 {
+    color: #d4a373;
+    margin-bottom: 1em;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    color: #8b6f5a;
+}
+
+input {
+    padding: 0.5em;
+    margin-bottom: 1em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f4ed;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus {
+    border-color: #d4a373;
+    box-shadow: 0 0 5px rgba(212, 163, 115, 0.4);
+    outline: none;
+}
+
+.password-field {
+    position: relative;
+    width: 100%;
+}
+
+.password-field input {
+    width: 100%;
+    padding-right: 2.5em; /* Extra space for the eye icon */
+    box-sizing: border-box;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 0.5em;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #8b6f5a;
+    font-size: 1.2em;
+    padding: 0.2em; /* Adds some padding around the icon */
+}
+
+button {
+    padding: 0.8em;
+    background-color: #d4a373;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #b58555;
+    transform: translateY(-2px);
+}
+
+p {
+    margin-top: 1em;
+}
+
+a {
+    color: #d4a373;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .container {
+        padding: 1.5em;
+        max-width: 90%; /* Allow more width on smaller screens */
+    }
+
+    h2 {
+        font-size: 1.5em; /* Reduce heading size */
+    }
+
+    input, button {
+        padding: 0.7em; /* Slightly smaller padding */
+        font-size: 0.9em; /* Adjust font size for buttons and inputs */
+    }
+
+    .toggle-password {
+        font-size: 1em; /* Reduce icon size */
+    }
+}
+
